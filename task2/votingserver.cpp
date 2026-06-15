@@ -178,7 +178,7 @@ void VotingServer::startVoting()
     msg += "Cast your vote with: /vote <option>\n";
 
     broadcast(msg);
-    QTimer::singleShot(30000, this, &VotingServer::showResults);
+
 }
 
 void VotingServer::checkAllVoted()
@@ -213,10 +213,5 @@ void VotingServer::showResults()
 
     broadcast(msg);
 
-    QTimer::singleShot(15000, this, [this]() {
-        if (!m_votingInProgress) {
-            broadcast("Timeout. Disconnecting all clients.\n");
-            QTimer::singleShot(1000, this, &VotingServer::stop);
-        }
-    });
+
 }
