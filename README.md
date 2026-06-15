@@ -7,6 +7,12 @@ Dockerfile на основе fedora:36, установка qt5-qtbase-devel и g
 
 Образ на DockerHub: https://hub.docker.com/r/siuhinsasha/fedora-qt-server
 
+Команды для сборки и запуска:
+```
+docker build -t siuhinsasha/fedora-qt-server ./task1
+docker run -p 65432:65432 siuhinsasha/fedora-qt-server
+```
+
 ### Задание 2 — Многопользовательский сервер голосования
 TCP-сервер на Qt6, до 7 клиентов. Приветствие при подключении, отказ при переполнении, рассылка количества клиентов. Голосование: /vote <option>, подсчёт, показ результатов.
 
